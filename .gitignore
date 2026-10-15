@@ -1,0 +1,12 @@
+# Konfigurasi Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# File Sistem Operasi
+.DS_Store
+Thumbs.db
+
+# Log atau File Temporary (jika ada)
+*.log
