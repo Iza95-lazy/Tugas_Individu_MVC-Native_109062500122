@@ -37,4 +37,6 @@ CREATE TABLE film_109062500122_ (
 
 
 # Riwayat commit dan penjelasannya
-1. Commit **Pertama** = 
+1. Commit **Pertama** = git commit -m "chore: initialize mvc project structure and database scheme"
+    Untuk tahap commit pertama berfokus pada pembuatan kerangka dasar dari aplikasi dengan tema data film yang diambil, file **.gitignore**, **README.md**, dan skema database awal.
+2. 
