@@ -16,3 +16,13 @@ switch ($action) {
         break;
     // Nanti aksi create, edit, delete akan kita arahkan ke sini di tahap berikutnya
 }
+
+switch ($action) {
+    case 'create':
+        $controller->create();
+        break;
+    case 'index':
+    default:
+        $controller->index();
+        break;
+}
