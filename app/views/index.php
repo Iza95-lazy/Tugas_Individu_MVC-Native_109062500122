@@ -13,6 +13,11 @@
                 Data film berhasil ditambahkan!
             </div>
         <?php endif; ?>
+        <?php if (isset($_GET['status']) && $_GET['status'] == 'success_edit') : ?>
+            <div style="background: #d4edda; color: #155724; padding: 10px; margin-bottom: 15px; border-radius: 4px;">
+                Data film berhasil diperbarui!
+            </div>
+        <?php endif; ?>
         <h1>Daftar Film Bioskop</h1>
         <a href="index.php?action=create" class="btn btn-primary">+ Tambah Data Film</a>
         

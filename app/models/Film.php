@@ -28,4 +28,32 @@ class Film {
 
         return $this->db->execute();
     }
+
+    // Ambil data film berdasarkan ID (untuk Edit)
+    public function getFilmById($id) {
+        $this->db->query("SELECT * FROM " . $this->table . " WHERE id = :id");
+        $this->db->bind('id', $id);
+        return $this->db->single();
+    }
+
+    // Update Data Film (Menggunakan Prepared Statement)
+    public function ubahDataFilm($data) {
+        $query = "UPDATE " . $this->table . " SET 
+                    judul = :judul, 
+                    sutradara = :sutradara, 
+                    genre = :genre, 
+                    tahun_rilis = :tahun_rilis, 
+                    rating = :rating 
+                  WHERE id = :id";
+        
+        $this->db->query($query);
+        $this->db->bind('id', $data['id']);
+        $this->db->bind('judul', $data['judul']);
+        $this->db->bind('sutradara', $data['sutradara']);
+        $this->db->bind('genre', $data['genre']);
+        $this->db->bind('tahun_rilis', $data['tahun_rilis']);
+        $this->db->bind('rating', $data['rating']);
+
+        return $this->db->execute();
+    }
 }

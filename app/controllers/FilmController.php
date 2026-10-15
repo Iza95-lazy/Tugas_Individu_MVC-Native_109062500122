@@ -31,4 +31,32 @@ class FilmController {
 
         require_once '../app/views/create.php';
     }
+
+    public function edit() {
+        $error = '';
+        $id = isset($_GET['id']) ? $_GET['id'] : '';
+        
+        $model = new Film();
+        $film = $model->getFilmById($id);
+
+        if (!$film) {
+            header('Location: index.php?action=index');
+            exit;
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (empty($_POST['judul']) || empty($_POST['sutradara']) || empty($_POST['genre']) || empty($_POST['tahun_rilis']) || empty($_POST['rating'])) {
+                $error = "Semua field wajib diisi!";
+            } else {
+                if ($model->ubahDataFilm($_POST)) {
+                    header('Location: index.php?action=index&status=success_edit');
+                    exit;
+                } else {
+                    $error = "Gagal mengubah data film.";
+                }
+            }
+        }
+
+        require_once '../app/views/edit.php';
+    }
 }

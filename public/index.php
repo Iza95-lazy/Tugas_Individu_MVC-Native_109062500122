@@ -21,8 +21,14 @@ switch ($action) {
     case 'create':
         $controller->create();
         break;
+
+    case 'edit':
+        $controller->edit();
+        break;
+
     case 'index':
     default:
         $controller->index();
         break;
+    
 }
