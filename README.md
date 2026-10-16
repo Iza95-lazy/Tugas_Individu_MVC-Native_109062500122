@@ -60,12 +60,12 @@ CREATE TABLE film_109062500122_ (
 7. da7891f feat: add read film list feature with mvc pattern
 8. 509c023 feat: add PDO database connection config
 9. fed8383 chore: initialize mvc project structure and database scheme
-**Penjelasan:**
+* **Penjelasan:**
 Ada penambahan sebanyak 3 kali commit yang pertama itu untuk membetulkan peringatan yang berualng kali muncul saat menambahkan, mengedit, dan menhapus data film, kedua itu untuk mengecek kembali list commit terbaru setelah perubahan pada beberapa kode (Perbaikan headers warning dan penambahan fitur sorting untuk mengurutkan data film berdasarkan rating atau tahun rilisnya). Untuk fitur sorting itu pure karena ingin coba-coba hehe.
 
 # Perubahan (Modifikasi) di beberapa file
 1. app/models/Film.php
-    Kode: 
+    * Kode: 
     public function getAllFilm($sort = 'id_desc') {
         $orderBy = "ORDER BY id DESC"; // default
 
@@ -84,7 +84,7 @@ Ada penambahan sebanyak 3 kali commit yang pertama itu untuk membetulkan peringa
     }
 
 2. app/views/index.php
-    Kode: 
+    * Kode: 
     <form method="GET" action="index.php" style="margin-bottom: 15px;">
         <input type="hidden" name="action" value="index">
         <label for="sort">Urutkan berdasarkan:</label>
@@ -98,7 +98,7 @@ Ada penambahan sebanyak 3 kali commit yang pertama itu untuk membetulkan peringa
     </form>
 
 3. app/controllers/FilmController.php
-    kode: 
+    * kode: 
     public function index() {
         $sort = isset($_GET['sort']) ? $_GET['sort'] : 'id_desc';
     
