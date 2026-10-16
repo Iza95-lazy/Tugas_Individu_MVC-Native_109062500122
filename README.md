@@ -51,10 +51,10 @@ CREATE TABLE film_109062500122_ (
     Commit ini berfokus pada penyelesaian fitur hapus data film dengan menerapkan fungsi query DELETE berbasis ID di Model, menangani proses pengalihan halaman (redirect) serta status respons di Controller, dan melengkapi antarmuka utama dengan indikator pesan sukses penghapusan data.
 
 # git log --oneline --decorate --all
-9e37bd8 (HEAD -> main) feat: add delete film feature and success message indicators
-4285097 feat: add edit and update film feature
-922ea5a feat: add create film feature with input validation
-da7891f feat: add read film list feature with mvc pattern
-509c023 feat: add PDO database connection config
-fed8383 chore: initialize mvc project structure and database scheme
+1. 9e37bd8 (HEAD -> main) feat: add delete film feature and success message indicators
+2. 4285097 feat: add edit and update film feature
+3. 922ea5a feat: add create film feature with input validation
+4. da7891f feat: add read film list feature with mvc pattern
+5. 509c023 feat: add PDO database connection config
+6. fed8383 chore: initialize mvc project structure and database scheme
 
