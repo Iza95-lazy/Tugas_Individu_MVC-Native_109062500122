@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container" style="max-width: 600px;">
+    <div class="container" style="max-width: 600px; margin-top: 30px;">
         <h1>Tambah Data Film Baru</h1>
         
         <?php if (!empty($error)) : ?>

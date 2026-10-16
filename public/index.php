@@ -1,4 +1,5 @@
 <?php
+ob_start();
 // Panggil konfigurasi database dan model/controller dasar
 require_once '../config/database.php';
 require_once '../app/models/Film.php';
@@ -36,3 +37,5 @@ switch ($action) {
         break;
     
 }
+ob_end_flush();
+?>
