@@ -26,6 +26,7 @@ Tugas_individu_MVC_109062500122/
 ```
 
 # Database: data_film_109062500122
+```
 CREATE TABLE film_109062500122_ (
     id INT AUTO_INCREMENT PRIMARY KEY,
     judul VARCHAR(150) NOT NULL,
@@ -35,7 +36,7 @@ CREATE TABLE film_109062500122_ (
     rating DECIMAL(3,1) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
+```
 
 
 # Riwayat commit dan penjelasannya (untuk kriteria penilaian)
@@ -68,6 +69,7 @@ Ada penambahan sebanyak 3 kali commit yang pertama itu untuk membetulkan peringa
 # Perubahan (Modifikasi) di beberapa file
 1. app/models/Film.php
     * Kode: 
+    ```
     public function getAllFilm($sort = 'id_desc') {
         $orderBy = "ORDER BY id DESC"; // default
 
@@ -84,9 +86,10 @@ Ada penambahan sebanyak 3 kali commit yang pertama itu untuk membetulkan peringa
         $this->db->query("SELECT * FROM " . $this->table . " " . $orderBy);
         return $this->db->resultSet();
     }
-
+    ```
 2. app/views/index.php
     * Kode: 
+    ```
     <form method="GET" action="index.php" style="margin-bottom: 15px;">
         <input type="hidden" name="action" value="index">
         <label for="sort">Urutkan berdasarkan:</label>
@@ -98,9 +101,11 @@ Ada penambahan sebanyak 3 kali commit yang pertama itu untuk membetulkan peringa
             <option value="tahun_asc" <?= (isset($_GET['sort']) && $_GET['sort'] == 'tahun_asc') ? 'selected' : ''; ?>>Tahun Terlama</option>
         </select>
     </form>
+    ```
 
 3. app/controllers/FilmController.php
     * kode: 
+    ```
     public function index() {
         $sort = isset($_GET['sort']) ? $_GET['sort'] : 'id_desc';
     
@@ -109,6 +114,7 @@ Ada penambahan sebanyak 3 kali commit yang pertama itu untuk membetulkan peringa
 
         require_once '../app/views/index.php';
     }
+    ```
 
 ⚙️ Panduan Instalasi Proyek (Installation Guide)
 Ikuti langkah-langkah berikut untuk menjalankan proyek aplikasi CRUD Data Film berbasis MVC ini di komputer lokal:
@@ -134,6 +140,19 @@ Ikuti langkah-langkah berikut untuk menjalankan proyek aplikasi CRUD Data Film b
     * Akses aplikasi melalui URL berikut:
         http://localhost/Tugas_individu_MVC_109062500122/public/index.php
     * Aplikasi siap digunakan! Kamu sudah bisa mencoba fitur Create, Read, Update, Delete, Sorting, hingga indikator pesan sukses.
+
+**Kesimpulan**
+Pengembangan aplikasi web Daftar Film Bioskop dengan pendekatan arsitektur Model-View-Controller (MVC) berbasis PHP Native dan database MySQL berhasil diimplementasikan dengan baik dan terstruktur. Berdasarkan seluruh proses perancangan hingga pengujian, beberapa poin kesimpulan utama dari tugas ini meliputi:
+1. Penerapan Arsitektur MVC yang Terstruktur: Pemisahan komponen antara Model (pengolahan logika database via   PDO), View (antarmuka HTML/CSS), dan Controller (pengatur alur logika dan permintaan pengguna) berhasil menciptakan kode yang modular, mudah dipelihara, serta terorganisir dengan rapi.
+2. Keamanan dan Penanganan Alur Data: Penggunaan prepared statements pada ekstensi PDO terbukti efektif untuk mengamankan aplikasi dari celah keamanan injeksi SQL (SQL Injection). Selain itu, penerapan output buffering (ob_start()) berhasil mengatasi kendala modifikasi header HTTP, memastikan proses redirect halaman pada operasi CRUD berjalan lancar tanpa warning.
+3. Fungsionalitas Fitur Lengkap: Aplikasi telah dilengkapi dengan fitur operasional dasar secara penuh—meliputi penambahan data (Create), pembacaan daftar data (Read), pembaruan data (Update), penghapusan data (Delete), validasi form input, indikator pesan status, serta opsi pengurutan (sorting) dinamis berdasarkan rating dan tahun rilis.
+4. Penerapan Manajemen Versi yang Baik: Seluruh tahapan pengembangan didokumentasikan menggunakan kontrol versi Git dengan commit message yang deskriptif dan konsisten, mencerminkan alur kerja pengembangan perangkat lunak yang profesional.
+
+<div align="center">
+
+**=== 109062500122 ===**
+
+</div>
 
 
 
