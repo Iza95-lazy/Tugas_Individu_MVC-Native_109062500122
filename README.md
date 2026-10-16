@@ -2,6 +2,7 @@
 Tugas Individu Pemrograman Web / Pemrograman Berorientasi Objek menggunakan PHP Native dengan pola Arsitektur MVC dan Database MySQL (PDO).
 
 # Struktur Folder
+```
 Tugas_individu_MVC_109062500122/
 ├── app/
 │   ├── controllers/
@@ -22,6 +23,7 @@ Tugas_individu_MVC_109062500122/
 │   └── index.php
 ├── .gitignore
 └── README.md
+```
 
 # Database: data_film_109062500122
 CREATE TABLE film_109062500122_ (
