@@ -26,6 +26,10 @@ switch ($action) {
         $controller->edit();
         break;
 
+    case 'delete':
+        $controller->delete();
+        break;
+
     case 'index':
     default:
         $controller->index();

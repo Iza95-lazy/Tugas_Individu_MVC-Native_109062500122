@@ -59,4 +59,22 @@ class FilmController {
 
         require_once '../app/views/edit.php';
     }
+
+    public function delete() {
+        $id = isset($_GET['id']) ? $_GET['id'] : '';
+        
+        if (!empty($id)) {
+            $model = new Film();
+            if ($model->hapusDataFilm($id)) {
+                header('Location: index.php?action=index&status=success_delete');
+                exit;
+            } else {
+                header('Location: index.php?action=index&status=failed_delete');
+                exit;
+            }
+        } else {
+            header('Location: index.php?action=index');
+            exit;
+        }
+    }
 }

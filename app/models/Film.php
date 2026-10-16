@@ -56,4 +56,15 @@ class Film {
 
         return $this->db->execute();
     }
+
+    // Hapus Data Film (Menggunakan Prepared Statement)
+    public function hapusDataFilm($id) {
+        $query = "DELETE FROM " . $this->table . " WHERE id = :id";
+        
+        $this->db->query($query);
+        $this->db->bind('id', $id);
+
+        return $this->db->execute();
+    }
+    
 }

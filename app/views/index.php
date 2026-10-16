@@ -18,6 +18,11 @@
                 Data film berhasil diperbarui!
             </div>
         <?php endif; ?>
+        <?php if (isset($_GET['status']) && $_GET['status'] == 'success_delete') : ?>
+            <div style="background: #f8d7da; color: #721c24; padding: 10px; margin-bottom: 15px; border-radius: 4px;">
+                Data film berhasil dihapus!
+            </div>
+        <?php endif; ?>
         <h1>Daftar Film Bioskop</h1>
         <a href="index.php?action=create" class="btn btn-primary">+ Tambah Data Film</a>
         
