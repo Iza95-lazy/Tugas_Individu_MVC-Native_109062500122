@@ -24,6 +24,17 @@
             </div>
         <?php endif; ?>
         <h1>Daftar Film Bioskop</h1>
+        <form method="GET" action="index.php" style="margin-bottom: 15px;">
+            <input type="hidden" name="action" value="index">
+            <label for="sort">Urutkan berdasarkan:</label>
+            <select name="sort" id="sort" onchange="this.form.submit()" style="padding: 5px; margin-left: 5px;">
+                <option value="">Pilih...</option>
+                <option value="rating_desc" <?= (isset($_GET['sort']) && $_GET['sort'] == 'rating_desc') ? 'selected' : ''; ?>>Rating Tertinggi</option>
+                <option value="rating_asc" <?= (isset($_GET['sort']) && $_GET['sort'] == 'rating_asc') ? 'selected' : ''; ?>>Rating Terendah</option>
+                <option value="tahun_desc" <?= (isset($_GET['sort']) && $_GET['sort'] == 'tahun_desc') ? 'selected' : ''; ?>>Tahun Terbaru</option>
+                <option value="tahun_asc" <?= (isset($_GET['sort']) && $_GET['sort'] == 'tahun_asc') ? 'selected' : ''; ?>>Tahun Terlama</option>
+            </select>
+        </form>
         <a href="index.php?action=create" class="btn btn-primary">+ Tambah Data Film</a>
         
         <table>

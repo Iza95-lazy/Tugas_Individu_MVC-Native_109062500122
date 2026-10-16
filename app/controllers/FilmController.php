@@ -2,14 +2,13 @@
 
 class FilmController {
     public function index() {
-        // Panggil Model Film untuk ambil data
+        $sort = isset($_GET['sort']) ? $_GET['sort'] : 'id_desc';
+    
         $model = new Film();
-        $films = $model->getAllFilm();
+        $films = $model->getAllFilm($sort);
 
-        // Panggil View dan kirimkan data film
         require_once '../app/views/index.php';
     }
-
     public function create() {
         $error = '';
         
@@ -77,4 +76,6 @@ class FilmController {
             exit;
         }
     }
+
+    
 }

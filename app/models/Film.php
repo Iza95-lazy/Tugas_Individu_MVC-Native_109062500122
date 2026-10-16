@@ -9,11 +9,23 @@ class Film {
     }
 
     // Mengambil seluruh data film
-    public function getAllFilm() {
-        $this->db->query("SELECT * FROM " . $this->table . " ORDER BY id DESC");
+    // Mengambil seluruh data film dengan opsi pengurutan (sorting)
+    public function getAllFilm($sort = 'id_desc') {
+        $orderBy = "ORDER BY id DESC"; // Default urutan
+
+        if ($sort == 'rating_desc') {
+            $orderBy = "ORDER BY rating DESC"; 
+        } elseif ($sort == 'rating_asc') {
+            $orderBy = "ORDER BY rating ASC";  
+        } elseif ($sort == 'tahun_desc') {
+            $orderBy = "ORDER BY tahun_rilis DESC"; 
+        } elseif ($sort == 'tahun_asc') {
+            $orderBy = "ORDER BY tahun_rilis ASC";  
+        }
+
+        $this->db->query("SELECT * FROM " . $this->table . " " . $orderBy);
         return $this->db->resultSet();
     }
-
     // Tambah Data Film (Menggunakan Prepared Statement)
     public function tambahDataFilm($data) {
         $query = "INSERT INTO " . $this->table . " (judul, sutradara, genre, tahun_rilis, rating) 
@@ -66,5 +78,6 @@ class Film {
 
         return $this->db->execute();
     }
+
     
 }
