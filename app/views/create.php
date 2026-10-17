@@ -16,7 +16,7 @@
             </div>
         <?php endif; ?>
 
-        <form action="" method="POST">
+        <form id="form-section" action="" method="POST">
             <div class="form-group" style="margin-bottom: 15px;">
                 <label for="judul">Judul Film:</label>
                 <input type="text" id="judul" name="judul" class="form-control" style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;" value="<?= isset($_POST['judul']) ? htmlspecialchars($_POST['judul']) : ''; ?>">
@@ -41,6 +41,16 @@
             <button type="submit" class="btn btn-primary">Simpan Data</button>
             <a href="index.php?action=index" class="btn" style="background-color: #6c757d; color: white;">Kembali</a>
         </form>
+
+        <script>
+            // Otomatis scroll ke bagian form saat halaman terbuka
+            window.onload = function() {
+                const formElement = document.getElementById('form-section');
+                if (formElement) {
+                    formElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            };
+        </script>
     </div>
 </body>
 </html>

@@ -16,7 +16,7 @@
             </div>
         <?php endif; ?>
 
-        <form action="" method="POST">
+        <form id="form-section" action="" method="POST">
             <input type="hidden" name="id" value="<?= $film['id']; ?>">
             
             <div style="margin-bottom: 15px;">
@@ -43,6 +43,16 @@
             <button type="submit" class="btn btn-warning" style="color: black; font-weight: bold;">Update Data</button>
             <a href="index.php?action=index" class="btn" style="background-color: #6c757d; color: white;">Kembali</a>
         </form>
+
+        <script>
+            // Otomatis scroll ke bagian form saat halaman terbuka
+            window.onload = function() {
+                const formElement = document.getElementById('form-section');
+                if (formElement) {
+                    formElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            };
+        </script>
     </div>
 </body>
 </html>

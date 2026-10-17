@@ -115,7 +115,18 @@ Ada penambahan sebanyak 3 kali commit yang pertama itu untuk membetulkan peringa
         require_once '../app/views/index.php';
     }
     ```
-
+4. Penambahan baris kode pada app/views/create.php dan app/views/edit.php agar saat tombol edit dan tambah ditekan, pengguna langsung diarahkan ke form input dari edit dan tambah
+```
+        <script>
+            // Otomatis scroll ke bagian form saat halaman terbuka
+            window.onload = function() {
+                const formElement = document.getElementById('form-section');
+                if (formElement) {
+                    formElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            };
+        </script>
+```
 ⚙️ Panduan Instalasi Proyek (Installation Guide)
 Ikuti langkah-langkah berikut untuk menjalankan proyek aplikasi CRUD Data Film berbasis MVC ini di komputer lokal:
 1. Prasyarat Sistem
